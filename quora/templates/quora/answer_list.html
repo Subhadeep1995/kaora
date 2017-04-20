@@ -5,3 +5,5 @@
     <li>{{ answer.answer_text }}</li>
   {% endfor %}
 </ul>
+
+<a href="{% url 'answer' pk=question.id %}">Add your answer</a>
