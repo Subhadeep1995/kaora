@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, redirect, get_object_or_404
 from django.utils import timezone
 from django.views.generic import ListView, DetailView
 from .forms import QuestionForm, AnswerForm
-
+from django.contrib.auth.decorators import login_required
 
 from . models import Question, Answer
 
@@ -16,6 +16,7 @@ class AnswersList(DetailView):
     #context_object_name = 'answers'
     template_name = 'quora/answer_list.html'
 
+@login_required
 def question_view(request):
     if request.method == 'POST':
         form = QuestionForm(request.POST)

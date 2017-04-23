@@ -1,6 +1,7 @@
 {% extends 'quora/base.html' %}
 
 {% block content %}
+<h1>Ask your questions for others to answer:</h1>
 <form action="" method="POST">
     {% csrf_token %}
     {{form.as_table}}
